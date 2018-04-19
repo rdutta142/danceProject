@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly flex-start;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+  }
+
+  .login {
+    margin-left: 20px;
+  }
+  
