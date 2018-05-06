@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotificationService } from './service/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +11,21 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit{
   slideIndex = 0;
   title = 'app';
+  loginValue: boolean = true;
+  loginLogout: string = 'Login';
+  loggedin = false;
+  dashBoardObj = new DashboardComponent();
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient,private noti:NotificationService) {}
 
   ngOnInit() {
     this.login();
+    this.noti.connect().subscribe(res=>{
+      this.loggedin = res;
+      console.log("yes got value",res);
+      this.loginLogout = res? "Logout":"Login";
+    })
+
   }
 
   showSlides() {
@@ -35,7 +47,18 @@ export class AppComponent implements OnInit{
 
     login(){
       
+    }
 
+    onActivate($event) {
+      console.log($event);
+      if($event === this.dashBoardObj){
+        this.loginValue = false;
+        this.loginLogout = this.loginValue ? 'Login' : 'Logout';
+      }
+    }
+
+    changeToLogout($event) {
+      console.log($event);
     }
   
     public ping() {

@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
-import { Http } from '@angular/http';
+
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,9 @@ import { VideosComponent } from './videos/videos.component';
 import { ActivityComponent } from './activity/activity.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth/auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotificationService } from './service/notification.service';
 
 
 @NgModule({
@@ -25,20 +28,24 @@ import { LoginComponent } from './login/login.component';
     MusicComponent,
     VideosComponent,
     ActivityComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    AuthService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

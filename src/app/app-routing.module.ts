@@ -6,6 +6,7 @@ import { MusicComponent } from './music/music.component';
 import { VideosComponent } from './videos/videos.component';
 import { ActivityComponent } from './activity/activity.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
 {
@@ -31,6 +32,10 @@ const routes: Routes = [
 {
   path: 'login',
   component: LoginComponent
+},
+{
+  path: 'dashboard',
+  component: DashboardComponent
 }
 ];
 
