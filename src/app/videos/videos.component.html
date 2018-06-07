@@ -1,3 +1,33 @@
-<p>
-  videos works!
-</p>
+<div style="margin-top:20px" class="row">
+  <div class="col-sm-6" style=" overflow-x: scroll;overflow-y: hidden;white-space: nowrap;width:50%">
+    <div *ngFor="let data of filterData; let i = index" class="card" style="width: 18rem;margin-top:20px;margin-right: 17px;display:inline-block">
+      <img class="card-img-top" [popover]="myPopoverCheckbox" (click)="openDialog(i)" [src]="data.iconPath" alt="Card image cap">
+      <popover-content #myPopoverCheckbox
+                title="Popover Checbox" 
+                placement="bottom"
+                [animation]="true" 
+                [closeOnClickOutside]="true" style="overflow:hidden">
+    <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
+    <b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.
+</popover-content>
+      <div class="card-body">
+        <p class="card-text" style="margin-top:20px">{{data.label}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <button>Apply Filters</button>
+  </div>
+</div>
+
+
+
+<popover-content #myPopoverSearch
+                title="Popover Search" 
+                placement="bottom"
+                [animation]="true" 
+                [closeOnClickOutside]="true" >
+    <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
+    <b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.
+</popover-content>

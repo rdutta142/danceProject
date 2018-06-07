@@ -1,3 +1,22 @@
-<p>
-  dashboard works!
-</p>
+
+<div class="sidenav">
+  <a routerLink="studio">Studio</a>
+  <a routerLink="dance" [popover]="myPopoverCheckbox">Dance</a>
+  <a routerLink="sports">Sports</a>
+  <a routerLink="swimming">Swimming</a>
+</div>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+
+<popover-content #myPopoverCheckbox
+placement="right"
+[animation]="true" 
+[closeOnClickOutside]="true" style="overflow:hidden">
+<a routerLink="indianClassical">Indian Classical Dance</a>
+<a routerLink="indianClassical">Indian Classical Dance</a>
+<a routerLink="indianClassical">Indian Classical Dance</a>
+<a routerLink="indianClassical">Indian Classical Dance</a>
+<a routerLink="indianClassical">Indian Classical Dance</a>
+</popover-content>

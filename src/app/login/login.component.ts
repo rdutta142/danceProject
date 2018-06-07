@@ -40,13 +40,13 @@ export class LoginComponent implements OnInit {
   }
 
   userAuthenticate(){
-    this.noti.notify();
     this.http.post(this.APP_REST_URL + this.LOGIN_SERVICE_PATH,{
       "userId": this.username,
       "password": this.password
   },{}).subscribe(val => {
     if(val) {
       this.authenticated = true;
+      this.noti.notify();
       this.authenticate.emit(this.authenticated);
       this.router.navigate(['dashboard']);
     }

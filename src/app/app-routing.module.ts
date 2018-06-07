@@ -7,6 +7,10 @@ import { VideosComponent } from './videos/videos.component';
 import { ActivityComponent } from './activity/activity.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudioComponent } from './dashboard/studio/studio.component';
+import { DanceComponent } from './dashboard/dance/dance.component';
+import { SportsComponent } from './dashboard/sports/sports.component';
+import { SwimmingComponent } from './dashboard/swimming/swimming.component';
 
 const routes: Routes = [
 {
@@ -35,7 +39,25 @@ const routes: Routes = [
 },
 {
   path: 'dashboard',
-  component: DashboardComponent
+  component: DashboardComponent,
+  children: [
+    {
+      path: 'studio',
+      component: StudioComponent
+    },
+    {
+      path: 'dance',
+      component: DanceComponent
+    },
+    {
+      path: 'sports',
+      component: SportsComponent
+    },
+    {
+      path: 'swimming',
+      component: SwimmingComponent
+    }
+  ]
 }
 ];
 

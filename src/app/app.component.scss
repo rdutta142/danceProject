@@ -1,7 +1,5 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly flex-start;
+    width: 100%;
   }
 
   .menu-container {
@@ -14,4 +12,6 @@
   .login {
     margin-left: 20px;
   }
+
+
   

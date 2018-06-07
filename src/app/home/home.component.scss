@@ -15,7 +15,7 @@
 input.txt {
     border: 0;
     padding: 1em;
-    width: 80%;
+    width: 100%;
     margin-bottom: 2em;
 }
 input.btn {
@@ -36,6 +36,8 @@ input.btn {
 
 .carousel-inner{
     height: 300px;
+    margin-top: 15px;
+    width: 100%;
 }
 
 .item, img{

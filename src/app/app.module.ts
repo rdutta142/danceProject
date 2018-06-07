@@ -18,6 +18,13 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotificationService } from './service/notification.service';
+import { Popover, PopoverModule } from 'ngx-popover';
+import { PopoverDirective } from './videos/popover.directive';
+import { HeaderComponent } from './header/header.component';
+import { StudioComponent } from './dashboard/studio/studio.component';
+import { DanceComponent } from './dashboard/dance/dance.component';
+import { SportsComponent } from './dashboard/sports/sports.component';
+import { SwimmingComponent } from './dashboard/swimming/swimming.component';
 
 
 @NgModule({
@@ -29,14 +36,21 @@ import { NotificationService } from './service/notification.service';
     VideosComponent,
     ActivityComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    PopoverDirective,
+    HeaderComponent,
+    StudioComponent,
+    DanceComponent,
+    SportsComponent,
+    SwimmingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PopoverModule
   ],
   providers: [
     {
